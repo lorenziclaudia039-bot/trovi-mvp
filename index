@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+
+  <title>TROVI | Profesionales verificados, cuando los necesitas</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+      <button
+        class="brand"
+        onclick="showScreen('home')"
+        aria-label="Ir al inicio"
+      >
+        <span class="brand-mark">T</span>
+        <span>TROVI</span>
+      </button>
+
+      <button
+        class="ghost"
+        onclick="showScreen('pro')"
+      >
+        Soy profesional
+      </button>
+
+    </header>
+
+
+    <main>
+
+      <!-- HOME -->
+      <section id="home" class="screen active">
+
+        <div class="hero">
+
+          <span class="eyebrow">
+            SERVICIOS PARA TU HOGAR O NEGOCIO
+          </span>
+
+          <h1>
+            Encuentra al profesional correcto.
+          </h1>
+
+          <p>
+            Publica lo que necesitas, recibe cotizaciones
+            y contrata con más confianza.
+          </p>
+
+          <button
+            class="primary big"
+            onclick="showScreen('request')"
+          >
+            Necesito un servicio
+          </button>
+
+        </div>
+
+
+        <!-- CATEGORIES -->
+        <section class="section">
+
+          <div class="section-heading">
+
+            <h2>
+              ¿Qué necesitas?
+            </h2>
+
+            <span>
+              Puerto Rico
+            </span>
+
+          </div>
+
+          <div
+            class="category-grid"
+            id="categoryGrid"
+          ></div>
+
+        </section>
+
+
+        <!-- TRUST -->
+        <section class="trust-card">
+
+          <div>
+
+            <strong>
+              Profesionales verificados
+            </strong>
+
+            <p>
+              Perfiles, experiencia y reputación
+              en un solo lugar.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              Hasta 5 cotizaciones
+            </strong>
+
+            <p>
+              Compara opciones antes de seleccionar.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              Pago protegido
+            </strong>
+
+            <p>
+              El pago se libera cuando
+              el trabajo se confirma.
+            </p>
+
+          </div>
+
+        </section>
+
+      </section>
+
+
+      <!-- CREATE REQUEST -->
+      <section id="request" class="screen">
+
+        <button
+          class="back"
+          onclick="showScreen('home')"
+        >
+          ← Volver
+        </button>
+
+
+        <div class="form-card">
+
+          <span class="eyebrow">
+            NUEVA SOLICITUD
+          </span>
+
+          <h1>
+            Cuéntanos qué necesitas
+          </h1>
+
+
+          <form id="requestForm">
+
+            <label>
+
+              Servicio
+
+              <select
+                id="service"
+                required
+              ></select>
+
+            </label>
+
+
+            <label>
+
+              Municipio
+
+              <select
+                id="municipality"
+                required
+              >
+
+                <option value="">
+                  Selecciona
+                </option>
+
+                <option>
+                  San Juan
+                </option>
+
+                <option>
+                  Guaynabo
+                </option>
+
+                <option>
+                  Bayamón
+                </option>
+
+                <option>
+                  Carolina
+                </option>
+
+                <option>
+                  Caguas
+                </option>
+
+                <option>
+                  Trujillo Alto
+                </option>
+
+                <option>
+                  Otro
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+
+              Describe el trabajo
+
+              <textarea
+                id="description"
+                rows="5"
+                placeholder="Ej. El aire acondicionado dejó de enfriar esta mañana..."
+                required
+              ></textarea>
+
+            </label>
+
+
+            <div class="two-col">
+
+              <label>
+
+                ¿Cuándo?
+
+                <select id="when">
+
+                  <option>
+                    Lo antes posible
+                  </option>
+
+                  <option>
+                    Hoy
+                  </option>
+
+                  <option>
+                    Esta semana
+                  </option>
+
+                  <option>
+                    Puedo coordinar
+                  </option>
+
+                </select>
+
+              </label>
+
+
+              <label>
+
+                Tipo de propiedad
+
+                <select id="propertyType">
+
+                  <option>
+                    Casa
+                  </option>
+
+                  <option>
+                    Apartamento
+                  </option>
+
+                  <option>
+                    Negocio
+                  </option>
+
+                  <option>
+                    Airbnb
+                  </option>
+
+                  <option>
+                    Edificio / Condominio
+                  </option>
+
+                </select>
+
+              </label>
+
+            </div>
+
+
+            <label class="check">
+
+              <input
+                type="checkbox"
+                id="sameDay"
+              />
+
+              Prefiero servicio el mismo día
+              si está disponible
+
+            </label>
+
+
+            <button
+              class="primary big"
+              type="submit"
+            >
+              Buscar profesionales
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
+
+      <!-- QUOTES -->
+      <section id="quotes" class="screen">
+
+        <button
+          class="back"
+          onclick="showScreen('request')"
+        >
+          ← Editar solicitud
+        </button>
+
+
+        <div class="section-heading stacked">
+
+          <div>
+
+            <span class="eyebrow">
+              MATCHING TROVI
+            </span>
+
+            <h1>
+              Profesionales disponibles
+            </h1>
+
+          </div>
+
+
+          <span class="status">
+            3 cotizaciones recibidas
+          </span>
+
+        </div>
+
+
+        <div
+          id="requestSummary"
+          class="summary"
+        ></div>
+
+
+        <div
+          class="quote-list"
+          id="quoteList"
+        ></div>
+
+      </section>
+
+
+      <!-- CHECKOUT -->
+      <section id="checkout" class="screen">
+
+        <button
+          class="back"
+          onclick="showScreen('quotes')"
+        >
+          ← Comparar cotizaciones
+        </button>
+
+
+        <div class="form-card">
+
+          <span class="eyebrow">
+            CONFIRMACIÓN
+          </span>
+
+          <h1>
+            Contrata con pago protegido
+          </h1>
+
+
+          <div id="selectedPro"></div>
+
+
+          <div class="payment-box">
+
+            <div>
+
+              <span>
+                Trabajo
+              </span>
+
+              <strong id="workPrice">
+                $0
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Tarifa TROVI
+              </span>
+
+              <strong>
+                $8
+              </strong>
+
+            </div>
+
+
+            <div class="total">
+
+              <span>
+                Total
+              </span>
+
+              <strong id="totalPrice">
+                $0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <p class="fine">
+
+            Demo MVP: el flujo de pago es simulado.
+
+            La integración de pagos se conectará
+            en la versión de producción.
+
+          </p>
+
+
+          <button
+            class="primary big"
+            onclick="confirmJob()"
+          >
+            Confirmar y reservar
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- SUCCESS -->
+      <section
+        id="success"
+        class="screen center-screen"
+      >
+
+        <div class="success-mark">
+          ✓
+        </div>
+
+        <span class="eyebrow">
+          SERVICIO CONFIRMADO
+        </span>
+
+        <h1>
+          Tu profesional está reservado.
+        </h1>
+
+        <p>
+          En producción, TROVI enviará aquí
+          las instrucciones, notificaciones
+          y actualizaciones del servicio.
+        </p>
+
+        <button
+          class="primary"
+          onclick="showScreen('home')"
+        >
+          Volver al inicio
+        </button>
+
+      </section>
+
+
+      <!-- PROFESSIONAL -->
+      <section id="pro" class="screen">
+
+        <button
+          class="back"
+          onclick="showScreen('home')"
+        >
+          ← Inicio
+        </button>
+
+
+        <div class="pro-hero">
+
+          <span class="eyebrow">
+            TROVI PARA PROFESIONALES
+          </span>
+
+          <h1>
+            Consigue oportunidades reales cerca de ti.
+          </h1>
+
+          <p>
+            Recibe solicitudes compatibles con tus servicios,
+            envía tu cotización y construye tu reputación.
+          </p>
+
+          <button
+            class="primary"
+            onclick="alert('Registro de profesionales: siguiente módulo del MVP')"
+          >
+            Crear perfil profesional
+          </button>
+
+        </div>
+
+
+        <div class="dashboard">
+
+          <div>
+
+            <span>
+              Solicitudes nuevas
+            </span>
+
+            <strong>
+              8
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Cotizaciones activas
+            </span>
+
+            <strong>
+              3
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Rating
+            </span>
+
+            <strong>
+              4.9
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="job-card">
+
+          <span class="status">
+            Nueva oportunidad
+          </span>
+
+          <h3>
+            Instalación de abanico de techo
+          </h3>
+
+          <p>
+            Guaynabo · Casa · Esta semana
+          </p>
+
+          <button
+            class="secondary"
+            onclick="alert('Flujo para enviar cotización: siguiente módulo')"
+          >
+            Enviar cotización
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <strong>
+        TROVI
+      </strong>
+
+      <span>
+        Profesionales verificados, cuando los necesitas.
+      </span>
+
+      <small>
+        MVP demostrativo · Puerto Rico
+      </small>
+
+    </footer>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>

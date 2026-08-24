@@ -1,20 +1,39 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#111827" />
 
-  <title>TROVI | Profesionales verificados, cuando los necesitas</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <link rel="stylesheet" href="styles.css" />
+  <meta
+    name="theme-color"
+    content="#111827"
+  />
+
+  <title>
+    TROVI | Profesionales verificados, cuando los necesitas
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  />
 </head>
+
 
 <body>
 
   <div class="app-shell">
 
-    <!-- HEADER -->
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
     <header class="topbar">
 
       <button
@@ -22,13 +41,21 @@
         onclick="showScreen('home')"
         aria-label="Ir al inicio"
       >
-        <span class="brand-mark">T</span>
-        <span>TROVI</span>
+
+        <span class="brand-mark">
+          T
+        </span>
+
+        <span>
+          TROVI
+        </span>
+
       </button>
+
 
       <button
         class="ghost"
-        onclick="showScreen('pro')"
+        onclick="startAsProfessional()"
       >
         Soy profesional
       </button>
@@ -36,149 +63,246 @@
     </header>
 
 
+
     <main>
-<!-- WELCOME -->
-<section id="welcome" class="screen active">
 
-  <div class="center-screen">
 
-    <div class="brand-mark" style="margin: 0 auto 22px;">
-      T
-    </div>
+      <!-- =========================================
+           WELCOME
+      ========================================== -->
 
-    <span class="eyebrow">
-      BIENVENIDO A TROVI
-    </span>
-
-    <h1>
-      Profesionales verificados, cuando los necesitas.
-    </h1>
-
-    <p>
-      Encuentra servicios confiables para tu hogar o negocio
-      en Puerto Rico.
-    </p>
-
-    <div style="display:grid;gap:12px;max-width:360px;margin:30px auto 0;">
-
-      <button
-        class="primary big"
-        onclick="startAsClient()"
+      <section
+        id="welcome"
+        class="screen active"
       >
-        Necesito un servicio
-      </button>
 
-      <button
-        class="secondary"
-        onclick="startAsProfessional()"
+        <div class="center-screen">
+
+          <div
+            class="brand-mark"
+            style="
+              margin: 0 auto 22px;
+              width: 72px;
+              height: 72px;
+              font-size: 30px;
+            "
+          >
+            T
+          </div>
+
+
+          <span class="eyebrow">
+            BIENVENIDO A TROVI
+          </span>
+
+
+          <h1>
+            Profesionales verificados,
+            cuando los necesitas.
+          </h1>
+
+
+          <p>
+            Encuentra servicios confiables para
+            tu hogar o negocio en Puerto Rico.
+          </p>
+
+
+          <div
+            style="
+              display:grid;
+              gap:12px;
+              max-width:360px;
+              margin:30px auto 0;
+            "
+          >
+
+            <button
+              class="primary big"
+              onclick="startAsClient()"
+            >
+              Necesito un servicio
+            </button>
+
+
+            <button
+              class="secondary"
+              onclick="startAsProfessional()"
+            >
+              Soy profesional
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           CLIENT REGISTRATION
+      ========================================== -->
+
+      <section
+        id="clientRegister"
+        class="screen"
       >
-        Soy profesional
-      </button>
 
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CLIENT REGISTRATION -->
-<section id="clientRegister" class="screen">
-
-  <button
-    class="back"
-    onclick="showScreen('welcome')"
-  >
-    ← Volver
-  </button>
-
-  <div class="form-card">
-
-    <span class="eyebrow">
-      CREAR CUENTA
-    </span>
-
-    <h1>
-      Comencemos
-    </h1>
-
-    <form id="clientRegisterForm">
-
-      <label>
-        Nombre completo
-
-        <input
-          type="text"
-          id="clientName"
-          placeholder="Tu nombre"
-          required
-        />
-      </label>
-
-
-      <label>
-        Email
-
-        <input
-          type="email"
-          id="clientEmail"
-          placeholder="nombre@email.com"
-          required
-        />
-      </label>
-
-
-      <label>
-        Teléfono
-
-        <input
-          type="tel"
-          id="clientPhone"
-          placeholder="787-000-0000"
-          required
-        />
-      </label>
-
-
-      <label>
-        Municipio
-
-        <select
-          id="clientMunicipality"
-          required
+        <button
+          class="back"
+          onclick="showScreen('welcome')"
         >
-
-          <option value="">
-            Selecciona
-          </option>
-
-          <option>San Juan</option>
-          <option>Guaynabo</option>
-          <option>Bayamón</option>
-          <option>Carolina</option>
-          <option>Caguas</option>
-          <option>Trujillo Alto</option>
-          <option>Otro</option>
-
-        </select>
-
-      </label>
+          ← Volver
+        </button>
 
 
-      <button
-        class="primary big"
-        type="submit"
+        <div class="form-card">
+
+          <span class="eyebrow">
+            CREAR CUENTA
+          </span>
+
+
+          <h1>
+            Comencemos
+          </h1>
+
+
+          <form id="clientRegisterForm">
+
+
+            <label>
+
+              Nombre completo
+
+              <input
+                type="text"
+                id="clientName"
+                placeholder="Tu nombre"
+                required
+              />
+
+            </label>
+
+
+
+            <label>
+
+              Email
+
+              <input
+                type="email"
+                id="clientEmail"
+                placeholder="nombre@email.com"
+                required
+              />
+
+            </label>
+
+
+
+            <label>
+
+              Teléfono
+
+              <input
+                type="tel"
+                id="clientPhone"
+                placeholder="787-000-0000"
+                required
+              />
+
+            </label>
+
+
+
+            <label>
+
+              Municipio
+
+              <select
+                id="clientMunicipality"
+                required
+              >
+
+                <option value="">
+                  Selecciona
+                </option>
+
+                <option>
+                  San Juan
+                </option>
+
+                <option>
+                  Guaynabo
+                </option>
+
+                <option>
+                  Bayamón
+                </option>
+
+                <option>
+                  Carolina
+                </option>
+
+                <option>
+                  Caguas
+                </option>
+
+                <option>
+                  Trujillo Alto
+                </option>
+
+                <option>
+                  Dorado
+                </option>
+
+                <option>
+                  Toa Baja
+                </option>
+
+                <option>
+                  Toa Alta
+                </option>
+
+                <option>
+                  Cataño
+                </option>
+
+                <option>
+                  Otro
+                </option>
+
+              </select>
+
+            </label>
+
+
+
+            <button
+              class="primary big"
+              type="submit"
+            >
+              Crear cuenta
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           HOME
+      ========================================== -->
+
+      <section
+        id="home"
+        class="screen"
       >
-        Crear cuenta
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-      <!-- HOME -->
-      <section id="home" class="screen active">
 
         <div class="hero">
 
@@ -186,14 +310,18 @@
             SERVICIOS PARA TU HOGAR O NEGOCIO
           </span>
 
+
           <h1>
             Encuentra al profesional correcto.
           </h1>
 
+
           <p>
-            Publica lo que necesitas, recibe cotizaciones
-            y contrata con más confianza.
+            Publica lo que necesitas,
+            recibe cotizaciones y contrata
+            con más confianza.
           </p>
+
 
           <button
             class="primary big"
@@ -205,7 +333,9 @@
         </div>
 
 
+
         <!-- CATEGORIES -->
+
         <section class="section">
 
           <div class="section-heading">
@@ -220,6 +350,7 @@
 
           </div>
 
+
           <div
             class="category-grid"
             id="categoryGrid"
@@ -228,8 +359,11 @@
         </section>
 
 
+
         <!-- TRUST -->
+
         <section class="trust-card">
+
 
           <div>
 
@@ -245,6 +379,7 @@
           </div>
 
 
+
           <div>
 
             <strong>
@@ -256,6 +391,7 @@
             </p>
 
           </div>
+
 
 
           <div>
@@ -271,13 +407,21 @@
 
           </div>
 
+
         </section>
 
       </section>
 
 
-      <!-- CREATE REQUEST -->
-      <section id="request" class="screen">
+
+      <!-- =========================================
+           CREATE REQUEST
+      ========================================== -->
+
+      <section
+        id="request"
+        class="screen"
+      >
 
         <button
           class="back"
@@ -293,12 +437,14 @@
             NUEVA SOLICITUD
           </span>
 
+
           <h1>
             Cuéntanos qué necesitas
           </h1>
 
 
           <form id="requestForm">
+
 
             <label>
 
@@ -310,6 +456,7 @@
               ></select>
 
             </label>
+
 
 
             <label>
@@ -358,6 +505,7 @@
             </label>
 
 
+
             <label>
 
               Describe el trabajo
@@ -372,7 +520,9 @@
             </label>
 
 
+
             <div class="two-col">
+
 
               <label>
 
@@ -399,6 +549,7 @@
                 </select>
 
               </label>
+
 
 
               <label>
@@ -434,6 +585,7 @@
             </div>
 
 
+
             <label class="check">
 
               <input
@@ -445,6 +597,7 @@
               si está disponible
 
             </label>
+
 
 
             <button
@@ -461,8 +614,15 @@
       </section>
 
 
-      <!-- QUOTES -->
-      <section id="quotes" class="screen">
+
+      <!-- =========================================
+           QUOTES
+      ========================================== -->
+
+      <section
+        id="quotes"
+        class="screen"
+      >
 
         <button
           class="back"
@@ -508,8 +668,15 @@
       </section>
 
 
-      <!-- CHECKOUT -->
-      <section id="checkout" class="screen">
+
+      <!-- =========================================
+           CHECKOUT
+      ========================================== -->
+
+      <section
+        id="checkout"
+        class="screen"
+      >
 
         <button
           class="back"
@@ -525,6 +692,7 @@
             CONFIRMACIÓN
           </span>
 
+
           <h1>
             Contrata con pago protegido
           </h1>
@@ -534,6 +702,7 @@
 
 
           <div class="payment-box">
+
 
             <div>
 
@@ -546,6 +715,7 @@
               </strong>
 
             </div>
+
 
 
             <div>
@@ -561,6 +731,7 @@
             </div>
 
 
+
             <div class="total">
 
               <span>
@@ -573,16 +744,14 @@
 
             </div>
 
+
           </div>
 
 
           <p class="fine">
-
             Demo MVP: el flujo de pago es simulado.
-
             La integración de pagos se conectará
             en la versión de producción.
-
           </p>
 
 
@@ -598,7 +767,11 @@
       </section>
 
 
-      <!-- SUCCESS -->
+
+      <!-- =========================================
+           SUCCESS
+      ========================================== -->
+
       <section
         id="success"
         class="screen center-screen"
@@ -608,19 +781,23 @@
           ✓
         </div>
 
+
         <span class="eyebrow">
           SERVICIO CONFIRMADO
         </span>
 
+
         <h1>
           Tu profesional está reservado.
         </h1>
+
 
         <p>
           En producción, TROVI enviará aquí
           las instrucciones, notificaciones
           y actualizaciones del servicio.
         </p>
+
 
         <button
           class="primary"
@@ -632,14 +809,21 @@
       </section>
 
 
-      <!-- PROFESSIONAL -->
-      <section id="pro" class="screen">
+
+      <!-- =========================================
+           PROFESSIONAL
+      ========================================== -->
+
+      <section
+        id="pro"
+        class="screen"
+      >
 
         <button
           class="back"
-          onclick="showScreen('home')"
+          onclick="showScreen('welcome')"
         >
-          ← Inicio
+          ← Volver
         </button>
 
 
@@ -649,18 +833,27 @@
             TROVI PARA PROFESIONALES
           </span>
 
+
           <h1>
             Consigue oportunidades reales cerca de ti.
           </h1>
 
+
           <p>
-            Recibe solicitudes compatibles con tus servicios,
-            envía tu cotización y construye tu reputación.
+            Recibe solicitudes compatibles
+            con tus servicios,
+            envía tu cotización y construye
+            tu reputación.
           </p>
+
 
           <button
             class="primary"
-            onclick="alert('Registro de profesionales: siguiente módulo del MVP')"
+            onclick="
+              alert(
+                'El registro completo de profesionales será nuestro próximo módulo.'
+              )
+            "
           >
             Crear perfil profesional
           </button>
@@ -668,7 +861,9 @@
         </div>
 
 
+
         <div class="dashboard">
+
 
           <div>
 
@@ -681,6 +876,7 @@
             </strong>
 
           </div>
+
 
 
           <div>
@@ -696,6 +892,7 @@
           </div>
 
 
+
           <div>
 
             <span>
@@ -708,7 +905,9 @@
 
           </div>
 
+
         </div>
+
 
 
         <div class="job-card">
@@ -717,17 +916,24 @@
             Nueva oportunidad
           </span>
 
+
           <h3>
             Instalación de abanico de techo
           </h3>
+
 
           <p>
             Guaynabo · Casa · Esta semana
           </p>
 
+
           <button
             class="secondary"
-            onclick="alert('Flujo para enviar cotización: siguiente módulo')"
+            onclick="
+              alert(
+                'El flujo para enviar cotizaciones será nuestro próximo módulo.'
+              )
+            "
           >
             Enviar cotización
           </button>
@@ -736,19 +942,27 @@
 
       </section>
 
+
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer>
 
       <strong>
         TROVI
       </strong>
 
+
       <span>
-        Profesionales verificados, cuando los necesitas.
+        Profesionales verificados,
+        cuando los necesitas.
       </span>
+
 
       <small>
         MVP demostrativo · Puerto Rico
@@ -756,10 +970,145 @@
 
     </footer>
 
+
   </div>
 
 
+
+  <!-- =========================================
+       CLIENT ONBOARDING
+  ========================================== -->
+
+  <script>
+
+    function startAsClient() {
+      showScreen("clientRegister");
+    }
+
+
+    function startAsProfessional() {
+      showScreen("pro");
+    }
+
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const clientRegisterForm =
+          document.getElementById(
+            "clientRegisterForm"
+          );
+
+
+        if (clientRegisterForm) {
+
+          clientRegisterForm.addEventListener(
+            "submit",
+            function (event) {
+
+              event.preventDefault();
+
+
+              const clientName =
+                document.getElementById(
+                  "clientName"
+                ).value;
+
+
+              const clientEmail =
+                document.getElementById(
+                  "clientEmail"
+                ).value;
+
+
+              const clientPhone =
+                document.getElementById(
+                  "clientPhone"
+                ).value;
+
+
+              const clientMunicipality =
+                document.getElementById(
+                  "clientMunicipality"
+                ).value;
+
+
+              const client = {
+
+                name:
+                  clientName,
+
+                email:
+                  clientEmail,
+
+                phone:
+                  clientPhone,
+
+                municipality:
+                  clientMunicipality
+
+              };
+
+
+              localStorage.setItem(
+                "troviClient",
+                JSON.stringify(client)
+              );
+
+
+              const requestMunicipality =
+                document.getElementById(
+                  "municipality"
+                );
+
+
+              if (
+                requestMunicipality &&
+                clientMunicipality !== "Otro"
+              ) {
+
+                requestMunicipality.value =
+                  clientMunicipality;
+
+              }
+
+
+              showScreen("home");
+
+            }
+          );
+
+        }
+
+
+        const savedClient =
+          localStorage.getItem(
+            "troviClient"
+          );
+
+
+        if (savedClient) {
+
+          showScreen("home");
+
+        } else {
+
+          showScreen("welcome");
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+  <!-- TROVI MAIN APP -->
+
   <script src="app.js"></script>
 
+
 </body>
+
 </html>

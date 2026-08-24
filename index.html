@@ -37,7 +37,146 @@
 
 
     <main>
+<!-- WELCOME -->
+<section id="welcome" class="screen active">
 
+  <div class="center-screen">
+
+    <div class="brand-mark" style="margin: 0 auto 22px;">
+      T
+    </div>
+
+    <span class="eyebrow">
+      BIENVENIDO A TROVI
+    </span>
+
+    <h1>
+      Profesionales verificados, cuando los necesitas.
+    </h1>
+
+    <p>
+      Encuentra servicios confiables para tu hogar o negocio
+      en Puerto Rico.
+    </p>
+
+    <div style="display:grid;gap:12px;max-width:360px;margin:30px auto 0;">
+
+      <button
+        class="primary big"
+        onclick="startAsClient()"
+      >
+        Necesito un servicio
+      </button>
+
+      <button
+        class="secondary"
+        onclick="startAsProfessional()"
+      >
+        Soy profesional
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CLIENT REGISTRATION -->
+<section id="clientRegister" class="screen">
+
+  <button
+    class="back"
+    onclick="showScreen('welcome')"
+  >
+    ← Volver
+  </button>
+
+  <div class="form-card">
+
+    <span class="eyebrow">
+      CREAR CUENTA
+    </span>
+
+    <h1>
+      Comencemos
+    </h1>
+
+    <form id="clientRegisterForm">
+
+      <label>
+        Nombre completo
+
+        <input
+          type="text"
+          id="clientName"
+          placeholder="Tu nombre"
+          required
+        />
+      </label>
+
+
+      <label>
+        Email
+
+        <input
+          type="email"
+          id="clientEmail"
+          placeholder="nombre@email.com"
+          required
+        />
+      </label>
+
+
+      <label>
+        Teléfono
+
+        <input
+          type="tel"
+          id="clientPhone"
+          placeholder="787-000-0000"
+          required
+        />
+      </label>
+
+
+      <label>
+        Municipio
+
+        <select
+          id="clientMunicipality"
+          required
+        >
+
+          <option value="">
+            Selecciona
+          </option>
+
+          <option>San Juan</option>
+          <option>Guaynabo</option>
+          <option>Bayamón</option>
+          <option>Carolina</option>
+          <option>Caguas</option>
+          <option>Trujillo Alto</option>
+          <option>Otro</option>
+
+        </select>
+
+      </label>
+
+
+      <button
+        class="primary big"
+        type="submit"
+      >
+        Crear cuenta
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
       <!-- HOME -->
       <section id="home" class="screen active">
 
